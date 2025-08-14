@@ -53,7 +53,7 @@ namespace SessionDemoAdvanced
             #region V-3
             public static class Helper
             {
-                // ... (كود دالة Swap من الصورة السابقة)
+               
 
                 // 1 reference
                 public static int LinearSearch<T>(T[] numbers, T value)
@@ -64,11 +64,11 @@ namespace SessionDemoAdvanced
                         {
                             if (numbers[i].Equals(value))
                             {
-                                return i; // يرجع مكان العنصر (index) إذا وجده
+                                return i;  
                             }
                         }
                     }
-                    return -1; // يرجع -1 إذا لم يجد العنصر في المصفوفة
+                    return -1; 
                 }
             }
             #endregion
