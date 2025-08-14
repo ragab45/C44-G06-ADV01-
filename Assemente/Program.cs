@@ -8,9 +8,9 @@
 
     internal class Program
     {
-       
+
             #region V-1
-        
+
 namespace SessionDemoAdvanced
     {
         //    public static class Helper
@@ -50,8 +50,31 @@ namespace SessionDemoAdvanced
                 return evens;
             }
             #endregion
+            #region V-3
+            public static class Helper
+            {
+                // ... (كود دالة Swap من الصورة السابقة)
+
+                // 1 reference
+                public static int LinearSearch<T>(T[] numbers, T value)
+                {
+                    if (numbers?.Length > 0 && value != null)
+                    {
+                        for (int i = 0; i < numbers.Length; i++)
+                        {
+                            if (numbers[i].Equals(value))
+                            {
+                                return i; // يرجع مكان العنصر (index) إذا وجده
+                            }
+                        }
+                    }
+                    return -1; // يرجع -1 إذا لم يجد العنصر في المصفوفة
+                }
+            }
+            #endregion
 
 
         }
-    
+    }
+}
 
