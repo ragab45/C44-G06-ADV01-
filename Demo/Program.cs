@@ -49,8 +49,28 @@ namespace Demo
                 }
             }
             #endregion
+            #region Q-3
+            public class EvenNumberFilter
+            {
+                public static List<int> GetEvenNumbers(List<int> numbers)
+                {
+                    List<int> evens = new List<int>();
+
+                    foreach (var num in numbers)
+                    {
+                        if (num % 2 == 0)
+                        {
+                            evens.Add(num);
+                        }
+                    }
+
+                    return evens;
+                }
+                #endregion
 
 
+            }
         }
     }
 }
+
