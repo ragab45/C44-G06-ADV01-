@@ -31,46 +31,80 @@ namespace Demo
         //    }
         #endregion
         #region Q-2
-        public class ArrayListReverser
+        //public class ArrayListReverser
+        //{
+        //    public static void Reverse(ArrayList list)
+        //    {
+        //        int left = 0;
+        //        int right = list.Count - 1;
+
+        //        while (left < right)
+        //        {
+        //            var temp = list[left];
+        //            list[left] = list[right];
+        //            list[right] = temp;
+
+        //            left++;
+        //            right--;
+        //        }
+        //    }
+        #endregion
+        #region Q-3
+        //public class EvenNumberFilter
+        //{
+        //    public static List<int> GetEvenNumbers(List<int> numbers)
+        //    {
+        //        List<int> evens = new List<int>();
+
+        //        foreach (var num in numbers)
+        //        {
+        //            if (num % 2 == 0)
+        //            {
+        //                evens.Add(num);
+        //            }
+        //        }
+
+        //        return evens;
+        //    }
+        #endregion
+        #region Q-4
+        using System.Collections.Generic;
+
+public class FixedSizeList<T>
+    {
+        private T[] items;
+        private int count;
+
+        public FixedSizeList(int capacity)
         {
-            public static void Reverse(ArrayList list)
-            {
-                int left = 0;
-                int right = list.Count - 1;
+            if (capacity <= 0)
+                throw new ArgumentException("Capacity must be greater than zero.");
 
-                while (left < right)
-                {
-                    var temp = list[left];
-                    list[left] = list[right];
-                    list[right] = temp;
-
-                    left++;
-                    right--;
-                }
-            }
-            #endregion
-            #region Q-3
-            public class EvenNumberFilter
-            {
-                public static List<int> GetEvenNumbers(List<int> numbers)
-                {
-                    List<int> evens = new List<int>();
-
-                    foreach (var num in numbers)
-                    {
-                        if (num % 2 == 0)
-                        {
-                            evens.Add(num);
-                        }
-                    }
-
-                    return evens;
-                }
-                #endregion
-
-
-            }
+            items = new T[capacity];
+            count = 0;
         }
+
+        public void Add(T item)
+        {
+            if (count >= items.Length)
+                throw new InvalidOperationException("List is full. Cannot add more elements.");
+
+            items[count] = item;
+            count++;
+        }
+
+        public T Get(int index)
+        {
+            if (index < 0 || index >= count)
+                throw new IndexOutOfRangeException("Invalid index.");
+
+            return items[index];
+        }
+        #endregion
+
+
     }
-}
+        }
+    
+
 
